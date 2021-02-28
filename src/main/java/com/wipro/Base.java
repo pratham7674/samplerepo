@@ -4,6 +4,8 @@ import com.google.common.collect.ImmutableMap;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.android.connection.ConnectionState;
+import io.appium.java_client.android.connection.ConnectionStateBuilder;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.ElementNotVisibleException;
 import org.openqa.selenium.JavascriptExecutor;
@@ -33,6 +35,14 @@ public class Base  {
      */
     public void initAndroidDriver(){
         androidDriver = new DriverBuilder().getDriver();
+    }
+
+    /*
+
+     */
+    public void relaunchApp(){
+        androidDriver.closeApp();
+        androidDriver.launchApp();
     }
 
     /**
@@ -93,6 +103,15 @@ public class Base  {
      */
     public void navigateBack(){
         androidDriver.navigate().back();
+    }
+
+    public void WifiOn() {
+        ConnectionState state = androidDriver.setConnection(new ConnectionStateBuilder().withWiFiEnabled().build());
+        logMessage("WiFi turned on");
+    }
+    public void WifiOff() {
+        ConnectionState state = androidDriver.setConnection(new ConnectionStateBuilder().withWiFiDisabled().build());
+        logMessage("WiFi turned off");
     }
 
 

@@ -5,7 +5,9 @@
         <classes>
             <class name="com.wipro.tests.SampleTests">
             <methods>
-                <include name="HomePageTest"/>
+                <include name="HomePageTestPass"/>
+                <include name="HomePageTestFail"/>
+                <include name="noInternetTest"/>
             </methods>
         </class>
         </classes>

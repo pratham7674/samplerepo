@@ -54,5 +54,9 @@ public class HomePage extends Base {
         return isElementVisible(homePageObjects.getElectronicsPageHeader());
     }
 
+    public Boolean isNoInternetMessagePresent(){
+        return isElementVisible(homePageObjects.getNoInternetError());
+    }
+
 
 }

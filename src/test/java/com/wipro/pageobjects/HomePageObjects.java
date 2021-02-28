@@ -7,32 +7,35 @@ import org.openqa.selenium.support.FindBy;
 
 public class HomePageObjects {
 
-    @AndroidFindBy(accessibility = "Prime")
+    @AndroidFindBy(accessibility = "Prime Prime")
     private MobileElement primeButton;
 
-    @AndroidFindBy(accessibility = "Pantry")
+    @AndroidFindBy(accessibility = "Pantry Pantry")
     private MobileElement pantryCategoryButton;
 
-    @AndroidFindBy(accessibility = "Mobiles")
+    @AndroidFindBy(accessibility = "Mobiles Mobiles")
     private MobileElement mobilesCategoryButton;
 
-    @AndroidFindBy(accessibility = "Fashion")
+    @AndroidFindBy(accessibility = "Fashion Fashion")
     private MobileElement fashionCategoryButton;
 
-    @AndroidFindBy(accessibility = "Home")
+    @AndroidFindBy(accessibility = "Home Home")
     private MobileElement homeCategoryButton;
 
-    @AndroidFindBy(accessibility = "Appliances")
+    @AndroidFindBy(accessibility = "Appliances Appliances")
     private MobileElement appliancesCategoryButton;
 
-    @AndroidFindBy(accessibility = "Electronics")
+    @AndroidFindBy(accessibility = "Electronics Electronics")
     private MobileElement electronicsCategoryButton;
 
-    @AndroidFindBy(xpath = "//*[@content-desc='Pantry']/../../..")
+    @AndroidFindBy(xpath = "//*[@content-desc='Pantry Pantry']/../../..")
     private MobileElement categoryScrollBar;
 
     @AndroidFindBy(xpath = "//*[@text='New & upcoming launches in electronics']")
     private MobileElement electronicsPageHeader;
+
+    @AndroidFindBy(id = "in.amazon.mShop.android.shopping:id/error_message")
+    private MobileElement noInternetError;
 
     public MobileElement getPrimeButton() {
         return primeButton;
@@ -64,7 +67,7 @@ public class HomePageObjects {
 
     public MobileElement getElectronicsPageHeader(){return electronicsPageHeader;}
 
-
+    public MobileElement getNoInternetError(){return noInternetError;}
 
 
 }
